@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+{% include 'home/NavBar.html' %}
+
+    <div style="margin-top: 80px; width: 900px; margin:80px auto;">
+       <form method="POST" >
+            {% csrf_token %}
+            <fieldset>
+                <legend> Join Now </legend>
+                {{ form | crispy  }}
+            </fieldset>
+            <div>
+            <button class="btn" type="submit">
+                Login
+            </button>
+                </div>
+        </form>
+    </div>
+
+{% endblock content %}
